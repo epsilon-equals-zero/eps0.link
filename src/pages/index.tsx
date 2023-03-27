@@ -14,17 +14,6 @@ export default function Home() {
         <>
             <Head>
                 <title>ε = 0 | link shortener</title>
-                <meta
-                    name="description"
-                    content="A URL shortener for 'ε = 0' related links."
-                    key="desc"
-                />
-                <meta property="og:title" content="eps0.link" />
-                <meta
-                    property="og:description"
-                    content="A URL shortener for 'ε = 0' related links."
-                />
-                <meta property="og:image" content="/epsilon-equals-zero.png" />
             </Head>
 
             <div className={styles.container}>
