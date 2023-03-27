@@ -24,7 +24,7 @@ export default function Home() {
                     property="og:description"
                     content="A URL shortener for 'ε = 0' related links."
                 />
-                <meta property="og:image" content="/epsilon-equals.zero.png" />
+                <meta property="og:image" content="/epsilon-equals-zero.png" />
             </Head>
 
             <div className={styles.container}>

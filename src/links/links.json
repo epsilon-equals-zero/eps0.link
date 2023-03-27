@@ -10,17 +10,5 @@
         "title": "Übungslösungen",
         "link": "https://drive.google.com/drive/folders/1pPEJOjHexLTRqqs6swf_L_ldXTFFvtfj?usp=sharing",
         "showInList": true
-    },
-    {
-        "short": "google",
-        "title": "Google",
-        "link": "https://google.com",
-        "showInList": false
-    },
-    {
-        "short": "google2",
-        "title": "Google",
-        "link": "https://google.com",
-        "showInList": true
     }
 ]
