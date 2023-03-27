@@ -1,7 +1,7 @@
 name: build-page
 run-name: Build Page
 on:
-    workflow-dispatch:
+    workflow_dispatch:
     push:
         branches:
             - main
