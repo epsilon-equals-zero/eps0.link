@@ -2,6 +2,13 @@
     {
         "short": "algebra",
         "title": "Algebra Vorlesungsmitschrift",
-        "link": "https://epsilon-equals-zero.github.io/algebra-2023s-vorlesung/document.pdf"
+        "link": "https://epsilon-equals-zero.github.io/algebra-2023s-vorlesung/document.pdf",
+        "showInList": true
+    },
+    {
+        "short": "solutions",
+        "title": "Übungslösungen",
+        "link": "https://drive.google.com/drive/folders/1pPEJOjHexLTRqqs6swf_L_ldXTFFvtfj?usp=sharing",
+        "showInList": true
     }
 ]

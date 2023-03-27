@@ -1,13 +1,8 @@
 import Head from "next/head";
-import Image from "next/image";
-import { Playfair_Display } from "next/font/google";
-import styles from "@/styles/Home.module.css";
-import clsx from "clsx";
+import styles from "@/styles/slug.module.css";
 import links from "@/links/links.json"
 import { Spinner } from "@/components/Spinner";
 import { GetStaticPropsContext } from "next";
-
-const font = Playfair_Display({ subsets: ["latin"] });
 
 type RedirectPageProps = {
     short: string,
@@ -24,9 +19,9 @@ export default function RedirectPage({
         <>
             <Head>
                 <title>{title}</title>
-                <meta http-equiv="refresh" content={`0; url=${link}`} />
+                {/* <meta http-equiv="refresh" content={`0; url=${link}`} /> */}
             </Head>
-            <div className={clsx(styles.container, font.className)}>
+            <div className={styles.container}>
                 <div className={styles.modal}>
                     <div className={styles.header}>
                         <div className={styles["banner-container"]}>
