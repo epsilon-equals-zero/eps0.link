@@ -14,6 +14,17 @@ export default function Home() {
         <>
             <Head>
                 <title>ε = 0 | link shortener</title>
+                <meta
+                    name="description"
+                    content="A URL shortener for 'ε = 0' related links."
+                    key="desc"
+                />
+                <meta property="og:title" content="eps0.link" />
+                <meta
+                    property="og:description"
+                    content="A URL shortener for 'ε = 0' related links."
+                />
+                <meta property="og:image" content="/epsilon-equals.zero.png" />
             </Head>
 
             <div className={styles.container}>
@@ -40,51 +51,6 @@ export default function Home() {
                         ))}
                 </div>
             </div>
-
-            {/* <div className={styles["container"]}>
-                <header className={styles["header"]}>
-                    <div>
-                        <span className={styles["header-title"]}>ε = 0</span>
-                        <span className={styles["header-vert"]} />
-                        <span className={styles["header-subtitle"]}>
-                            link shortener
-                        </span>
-                    </div>
-                </header>
-                <main className={styles["main"]}>
-                    {links
-                        .filter((link) => link.showInList)
-                        .map((link) => (
-                            <div
-                                key={link.short}
-                                className={styles["link-box"]}
-                            >
-                                <div className={styles["link-body"]}>
-                                    <span className={styles["link-title"]}>
-                                        {link.title}
-                                    </span>
-                                    <span>eps0.link/{link.short}</span>
-                                </div>
-                                <div className={styles["link-action"]}>
-                                    <Link
-                                        className={styles["link"]}
-                                        href={link.link}
-                                    >
-                                        <FaExternalLinkAlt />
-                                    </Link>
-                                </div>
-                            </div>
-                        ))}
-                </main>
-                <footer className={styles["footer"]}>
-                    <Link
-                        className={styles["link"]}
-                        href="https://github.com/epsilon-equals-zero"
-                    >
-                        <FaGithub /> Github Organisation
-                    </Link>
-                </footer>
-            </div> */}
         </>
     );
 }

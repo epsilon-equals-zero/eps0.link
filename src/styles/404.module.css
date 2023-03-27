@@ -1,0 +1,15 @@
+.container {
+    position: relative;
+    margin: auto;
+    user-select: none;
+}
+.title {
+    text-align: center;
+    font-size: 10em;
+    line-height: 1;
+}
+.message {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
