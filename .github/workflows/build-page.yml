@@ -16,9 +16,9 @@ jobs:
         with:
           node-version: '16.x'
 
-      - run: npm ci
+      - run: yarn install
 
-      - run: npm run export
+      - run: yarn export
 
       - name: deploy
         uses: s0/git-publish-subdir-action@develop
