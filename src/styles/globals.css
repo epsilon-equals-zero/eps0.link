@@ -7,12 +7,37 @@
 html,
 body {
     width: 100vw;
-    min-width: 100vh;
     overflow-x: hidden;
 }
 
 body {
-    background: #f1f3f4;
+    background-image: radial-gradient(
+        circle 993px at 0.5% 50.5%,
+        rgba(137, 171, 245, 0.37) 0%,
+        rgba(245, 247, 252, 1) 100.2%
+    );
+}
+
+#__next {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0;
+}
+
+footer {
+    color: rgb(192, 194, 199);
+    text-align: center;
+    padding: 12px 0;
+}
+footer span {
+    margin: auto 1em;
+    vertical-align: middle;
 }
 
 a {

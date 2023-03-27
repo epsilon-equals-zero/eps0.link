@@ -1,74 +1,55 @@
 .container {
     display: flex;
     flex-direction: column;
-    height: 100vh;
-    width: 100vw;
+
+    max-width: 1024px;
+    margin: auto;
 }
 
 .header {
-    background-color: #01887b;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    color: black;
+    text-align: center;
 }
-
-.header-title {
-    font-size: 36px;
-    line-height: 0;
-    color: #fff;
+.header .title {
+    font-size: 5em;
 }
-
-.header-vert {
-    border-left: 1px solid #dadada;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-.header-subtitle {
-    font-size: 16px;
-    line-height: 0;
-    color: #dadada;
-}
-
-.main {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 20px;
-}
-
-.footer {
-    padding: 8px;
-}
-
-.link {
-    color: #5a5a5a;
-}
-
-.link:hover {
-    color: #000;
-}
-
-.link-box {
-    background: white;
-    width: 380px;
-    box-shadow: 4.5px 4.9px 4.5px rgba(0, 0, 0, 0.032),
-        15px 16.5px 15.2px rgba(0, 0, 0, 0.048),
-        67px 74px 68px rgba(0, 0, 0, 0.08);
-    margin: 20px;
-    padding: 10px;
-    display: flex;
-}
-
-.link-body {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-.link-title {
-    font-size: 1.25em;
+.header .subtitle {
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
     font-weight: bold;
+}
+
+.linkGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 60px;
+}
+.linkGrid .linkItem {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2.8px 2.8px 4.9px rgba(0, 0, 0, 0.021),
+        7.6px 7.6px 13.6px rgba(0, 0, 0, 0.03),
+        18.4px 18.4px 32.9px rgba(0, 0, 0, 0.039),
+        61px 61px 109px rgba(0, 0, 0, 0.06);
+    transition: background 0.2s;
+}
+.linkGrid .linkItem:hover {
+    background: #f1f1f1;
+}
+.linkGrid .linkItem .title {
+    margin: 0 0 0.4em 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.linkGrid .linkItem .link {
+    margin: auto 0 0 auto;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: rgb(177, 177, 177);
 }

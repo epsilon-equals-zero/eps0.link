@@ -1,11 +1,28 @@
-import '@/styles/globals.css'
-import { Playfair_Display } from "next/font/google";
-import type { AppProps } from 'next/app'
+import "@/styles/globals.css";
+import clsx from "clsx";
+import type { AppProps } from "next/app";
+import { Noto_Sans } from "next/font/google";
+import { FaGithub } from "react-icons/fa";
 
-const playfair = Playfair_Display({ subsets: ["latin"] });
+const font = Noto_Sans({ subsets: ["latin"], weight: ["500"] });
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <div className={playfair.className}>
-        <Component {...pageProps} />
-    </div>
+    return (
+        <>
+            <main className={clsx(font.className)}>
+                <Component {...pageProps} />
+            </main>
+            <footer className={clsx(font.className)}>
+                <span>Copyright &copy; {new Date().getFullYear()} ε = 0</span>
+                <span>
+                    <a
+                        href="https://github.com/epsilon-equals-zero/eps0.link"
+                        target="_blank"
+                    >
+                        <FaGithub />
+                    </a>
+                </span>
+            </footer>
+        </>
+    );
 }
