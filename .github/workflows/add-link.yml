@@ -1,0 +1,36 @@
+name: add-link
+run-name: Add Link
+on:
+    workflow_dispatch:
+        inputs:
+            short:
+                description: "The short slug of the redirect."
+                required: true
+            title:
+                description: "The title of the redirect."
+                required: true
+            link:
+                required: true
+                description: "The actual link to redirect to."
+            showInList:
+                type: boolean
+                description: "Whether to show the entry in the list on the page index."
+
+jobs:
+    modify-links:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+
+            - name: Use Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: "16.x"
+
+            - run: yarn install
+
+            - run: yarn linker add --short ${{ github.event.inputs.short }} --title ${{ github.event.inputs.title }} --link ${{ github.event.inputs.link }} ${{ fromJSON('["--hidden", ""]')[github.event.inputs.showInList == 'true'] }}
+
+            - uses: EndBug/add-and-commit@v9
+              with:
+                  message: 'add "${{ github.event.inputs.short }}" link'
