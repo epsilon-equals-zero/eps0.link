@@ -10,5 +10,11 @@
         "title": "Übungslösungen",
         "link": "https://drive.google.com/drive/folders/1pPEJOjHexLTRqqs6swf_L_ldXTFFvtfj?usp=sharing",
         "showInList": true
+    },
+    {
+        "short": "repos",
+        "title": "Github",
+        "link": "https://github.com/orgs/epsilon-equals-zero/repositories",
+        "showInList": true
     }
 ]
