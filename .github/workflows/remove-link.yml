@@ -1,4 +1,4 @@
-name: Add link to site
+name: Remove link from site
 on:
     workflow_dispatch:
         inputs:
