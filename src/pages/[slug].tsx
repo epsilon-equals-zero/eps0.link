@@ -1,7 +1,6 @@
 import Head from "next/head";
 import styles from "@/styles/slug.module.css";
 import links from "@/links/links.json";
-import { Spinner } from "@/components/Spinner";
 import { GetStaticPropsContext } from "next";
 import { Noto_Serif } from "next/font/google";
 import clsx from "clsx";
@@ -14,11 +13,7 @@ type RedirectPageProps = {
     link: string;
 };
 
-export default function RedirectPage({
-    short,
-    title,
-    link,
-}: RedirectPageProps) {
+export default function RedirectPage({ title, link }: RedirectPageProps) {
     return (
         <>
             <Head>

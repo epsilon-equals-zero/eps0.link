@@ -54,3 +54,9 @@
     letter-spacing: 0.06em;
     color: rgb(177, 177, 177);
 }
+
+@media screen and (max-width: 768px) {
+    .linkGrid {
+        grid-template-columns: 1fr;
+    }
+}
