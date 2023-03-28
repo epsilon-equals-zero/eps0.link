@@ -35,4 +35,4 @@ jobs:
               with:
                   message: 'add "${{ github.event.inputs.short }}" link'
 
-            - uses: ./github/workflows/generate-site.yml
+            - uses: ./.github/workflows/generate-site.yml
