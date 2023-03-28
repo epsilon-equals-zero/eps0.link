@@ -1,8 +1,9 @@
-import "@/styles/globals.css";
 import clsx from "clsx";
 import type { AppProps } from "next/app";
-import { Noto_Sans } from "next/font/google";
 import { FaGithub } from "react-icons/fa";
+import { Noto_Sans } from "next/font/google";
+
+import "@/styles/globals.css";
 
 const font = Noto_Sans({ subsets: ["latin"], weight: ["500"] });
 

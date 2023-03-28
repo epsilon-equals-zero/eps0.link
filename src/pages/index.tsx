@@ -1,10 +1,7 @@
-import Head from "next/head";
-import styles from "@/styles/Home.module.css";
-import { FaGithub } from "react-icons/fa";
-import Link from "next/link";
-import links from "@/links/links.json";
-import { FaExternalLinkAlt } from "react-icons/fa";
 import clsx from "clsx";
+import Head from "next/head";
+import links from "@/links/links.json";
+import styles from "@/styles/Home.module.css";
 import { Noto_Serif } from "next/font/google";
 
 const serif = Noto_Serif({ subsets: ["latin", "greek"], weight: ["700"] });
@@ -25,7 +22,7 @@ export default function Home() {
                 </div>
                 <div className={styles.linkGrid}>
                     {links
-                        .filter((link) => link.showInList)
+                        .filter((link) => !link.hidden)
                         .map((link) => (
                             <a
                                 key={link.short}

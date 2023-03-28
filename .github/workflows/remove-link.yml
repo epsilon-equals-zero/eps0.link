@@ -1,0 +1,29 @@
+name: Add link to site
+on:
+    workflow_dispatch:
+        inputs:
+            short:
+                description: "The short slug of the redirect to remove."
+                required: true
+
+jobs:
+    modify-links:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+
+            - name: Use Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: "16.x"
+
+            - name: Install packages
+              run: yarn install
+
+            - run: yarn linker remove ${{ github.event.inputs.short }}
+
+            - uses: EndBug/add-and-commit@v9
+              with:
+                  message: 'add "${{ github.event.inputs.short }}" link'
+
+            - uses: ./github/workflows/generate-site.yml

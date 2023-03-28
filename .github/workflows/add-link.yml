@@ -1,5 +1,4 @@
-name: add-link
-run-name: Add Link
+name: Add link to site
 on:
     workflow_dispatch:
         inputs:
@@ -10,11 +9,11 @@ on:
                 description: "The title of the redirect."
                 required: true
             link:
-                required: true
                 description: "The actual link to redirect to."
-            showInList:
+                required: true
+            hidden:
                 type: boolean
-                description: "Whether to show the entry in the list on the page index."
+                description: "Whether to hide the entry in the list on the page index."
 
 jobs:
     modify-links:
@@ -27,10 +26,13 @@ jobs:
               with:
                   node-version: "16.x"
 
-            - run: yarn install
+            - name: Install packages
+              run: yarn install
 
             - run: yarn linker add --short ${{ github.event.inputs.short }} --title ${{ github.event.inputs.title }} --link ${{ github.event.inputs.link }} ${{ fromJSON('["--hidden", ""]')[github.event.inputs.showInList == 'true'] }}
 
             - uses: EndBug/add-and-commit@v9
               with:
                   message: 'add "${{ github.event.inputs.short }}" link'
+
+            - uses: ./github/workflows/generate-site.yml

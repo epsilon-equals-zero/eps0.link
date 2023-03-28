@@ -3,18 +3,18 @@
         "short": "algebra",
         "title": "Algebra 2023 Vorlesungsmitschrift",
         "link": "https://epsilon-equals-zero.github.io/algebra-2023s-vorlesung/document.pdf",
-        "showInList": true
+        "hidden": false
     },
     {
         "short": "solutions",
         "title": "Übungslösungen",
         "link": "https://drive.google.com/drive/folders/1pPEJOjHexLTRqqs6swf_L_ldXTFFvtfj?usp=sharing",
-        "showInList": true
+        "hidden": false
     },
     {
         "short": "repos",
         "title": "Github",
         "link": "https://github.com/orgs/epsilon-equals-zero/repositories",
-        "showInList": true
+        "hidden": false
     }
 ]

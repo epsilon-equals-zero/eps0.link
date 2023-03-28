@@ -1,9 +1,9 @@
+import clsx from "clsx";
 import Head from "next/head";
-import styles from "@/styles/slug.module.css";
 import links from "@/links/links.json";
+import styles from "@/styles/slug.module.css";
 import { GetStaticPropsContext } from "next";
 import { Noto_Serif } from "next/font/google";
-import clsx from "clsx";
 
 const serif = Noto_Serif({ subsets: ["latin", "greek"], weight: ["700"] });
 

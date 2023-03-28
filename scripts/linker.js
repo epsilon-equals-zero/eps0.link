@@ -6,6 +6,13 @@ const fs = require("fs");
 
 const linkpath = path.join(process.cwd(), "./src/links/links.json");
 
+function getLinks() {
+    return JSON.parse(fs.readFileSync(linkpath, "utf-8"));
+}
+function setLinks(links) {
+    fs.writeFileSync(linkpath, JSON.stringify(links, undefined, 4) + "\n");
+}
+
 program
     .command("add")
     .description("Adds a new link entry.")
@@ -14,15 +21,26 @@ program
     .requiredOption("--link <link>")
     .option("--hidden", undefined, false)
     .action(function () {
-        const options = this.opts();
-        const links = JSON.parse(fs.readFileSync(linkpath, "utf-8"));
-        links.push({
-            short: options.short,
-            title: options.title,
-            link: options.link,
-            showInList: !options.hidden,
-        });
-        fs.writeFileSync(linkpath, JSON.stringify(links, undefined, 4) + "\n");
+        const { short, title, link, hidden } = this.opts();
+        setLinks(
+            getLinks().concat([
+                {
+                    short,
+                    title,
+                    link,
+                    hidden: !!hidden,
+                },
+            ])
+        );
+    });
+
+program
+    .command("remove")
+    .description("Removes an existing link entry.")
+    .argument("<short>")
+    .action(function () {
+        const short = this.args[0];
+        setLinks(getLinks().filter((l) => l.short !== short));
     });
 
 program.parse();

@@ -1,6 +1,6 @@
-name: build-page
-run-name: Build Page
+name: Generate static site
 on:
+    workflow_call:
     workflow_dispatch:
     push:
         branches:
@@ -12,8 +12,7 @@ jobs:
         steps:
             - uses: actions/checkout@v3
 
-            - name: Use Node.js
-              uses: actions/setup-node@v3
+            - uses: actions/setup-node@v3
               with:
                   node-version: "16.x"
 
@@ -33,11 +32,13 @@ jobs:
                   restore-keys: |
                       ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-
 
-            - run: yarn install
+            - name: Install packages
+              run: yarn install
 
-            - run: yarn export
+            - name: Export static site
+              run: yarn export
 
-            - name: deploy
+            - name: Publish to build branch
               uses: s0/git-publish-subdir-action@develop
               env:
                   REPO: self
