@@ -16,11 +16,5 @@
         "title": "Github",
         "link": "https://github.com/orgs/epsilon-equals-zero/repositories",
         "hidden": false
-    },
-    {
-        "short": "google",
-        "title": "Google",
-        "link": "https://google.com",
-        "hidden": false
     }
 ]
