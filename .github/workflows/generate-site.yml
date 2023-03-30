@@ -1,6 +1,9 @@
 name: Generate static site
 on:
     workflow_call:
+        inputs:
+            commit-sha:
+                type: string
     workflow_dispatch:
     push:
         branches:
@@ -11,6 +14,8 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
+              with:
+                  ref: ${{ github.event.inputs.commit-sha || github.sha }}
 
             - uses: actions/setup-node@v3
               with:

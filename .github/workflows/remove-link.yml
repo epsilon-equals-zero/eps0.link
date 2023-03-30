@@ -9,6 +9,8 @@ on:
 jobs:
     modify-links:
         runs-on: ubuntu-latest
+        outputs:
+            commit-sha: ${{ steps.push-changes.outputs.commit_long_sha }}
         steps:
             - uses: actions/checkout@v3
 
@@ -22,10 +24,14 @@ jobs:
 
             - run: yarn linker remove ${{ github.event.inputs.short }}
 
-            - uses: EndBug/add-and-commit@v9
+            - name: Push changes
+              id: push-changes
+              uses: EndBug/add-and-commit@v9
               with:
-                  message: 'add "${{ github.event.inputs.short }}" link'
+                  message: 'remove "${{ github.event.inputs.short }}" link'
 
     generate-site:
         needs: modify-links
         uses: ./.github/workflows/generate-site.yml
+        with:
+            commit-sha: ${{ needs.modify-links.outputs.commit-sha }}
