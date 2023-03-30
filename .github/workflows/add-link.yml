@@ -33,7 +33,9 @@ jobs:
 
             - run: yarn linker add --short ${{ github.event.inputs.short }} --title ${{ github.event.inputs.title }} --link ${{ github.event.inputs.link }} ${{ fromJSON('["--hidden", ""]')[github.event.inputs.showInList == 'true'] }}
 
-            - uses: EndBug/add-and-commit@v9
+            - name: Push changes
+              id: push-changes
+              uses: EndBug/add-and-commit@v9
               with:
                   message: 'add "${{ github.event.inputs.short }}" link'
 
